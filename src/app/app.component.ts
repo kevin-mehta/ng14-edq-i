@@ -7,8 +7,19 @@ import './vendor/edq/myAccountEdqScript.js';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent  {
+export class AppComponent {
   name = 'Angular ' + VERSION.major;
+  
+  ngAfterViewInit() {
+    let win = window && (window as any);
+    setTimeout(function () {
+      win['configureAndInitializeEDQ'] && win.configureAndInitializeEDQ();
+    }, 1000);
+  }
+
+  submitForm() {
+    console.debug('Form submitted!');
+  }
 }
