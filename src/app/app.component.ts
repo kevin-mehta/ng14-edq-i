@@ -11,7 +11,7 @@ import './vendor/edq/myAccountEdqScript.js';
 })
 export class AppComponent {
   name = 'Angular ' + VERSION.major;
-  
+
   ngAfterViewInit() {
     let win = window && (window as any);
     setTimeout(function () {
